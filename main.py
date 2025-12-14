@@ -40,7 +40,7 @@ def main_menu():
         print("11. Пароли")
         print("12. О поворотных ручках (нестабильный)")
         print("\n0.  Выход")
-        print("=" * 17 + ' made by justduhsik ' + "=" * 17)
+        print("=" * 15 + ' made by justduhsik ' + "=" * 15)
         
         choice = input("\nВведите номер модуля: ").strip()
         
