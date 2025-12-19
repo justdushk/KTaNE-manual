@@ -23,7 +23,7 @@ def main_menu():
     while True:
         clear_screen()
         print("=" * 50)
-        print("KEEP TALKING AND NOBODY EXPLODES - МАНУАЛ")
+        print("    " * 1 + "KEEP TALKING AND NOBODY EXPLODES - МАНУАЛ")
         print("=" * 50)
         print("\nВыберите модуль:\n")
         print("1.  Провода")

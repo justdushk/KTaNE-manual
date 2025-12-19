@@ -17,35 +17,35 @@ def wires_module():
     # Ввод цветов проводов
     colors = []
     print(f"\nВведите цвет каждого провода (сверху вниз):")
-    print("Доступные цвета: красный, синий, желтый, белый, черный")
+    print("Доступные цвета: красный(кр), синий(с), желтый(ж), белый(б), черный(ч)")
     
     for i in range(count):
         while True:
             color = input(f"Провод {i+1}: ").strip().lower()
-            if color in ['красный', 'синий', 'желтый', 'белый', 'черный']:
+            if color in ['кр', 'с', 'ж', 'б', 'ч']:
                 colors.append(color)
                 break
-            print("Неверный цвет! Используйте: красный, синий, желтый, белый, черный")
+            print("Неверный цвет! Используйте: красный(кр), синий(с), желтый(ж), белый(б), черный(ч)")
     
     # Подсчет цветов
-    red_count = colors.count('красный')
-    blue_count = colors.count('синий')
-    yellow_count = colors.count('желтый')
-    white_count = colors.count('белый')
-    black_count = colors.count('черный')
-    
+    red_count = colors.count('кр')
+    blue_count = colors.count('с')
+    yellow_count = colors.count('ж')
+    white_count = colors.count('б')
+    black_count = colors.count('ч')
+
     result = None
     
     # Логика для 3 проводов
     if count == 3:
         if red_count == 0:
             result = 2
-        elif colors[-1] == 'белый':
+        elif colors[-1] == 'б':
             result = count
         elif blue_count > 1:
             # Последний синий
             for i in range(len(colors) - 1, -1, -1):
-                if colors[i] == 'синий':
+                if colors[i] == 'с':
                     result = i + 1
                     break
         else:
@@ -59,14 +59,14 @@ def wires_module():
             if serial == 'да':
                 # Последний красный
                 for i in range(len(colors) - 1, -1, -1):
-                    if colors[i] == 'красный':
+                    if colors[i] == 'кр':
                         result = i + 1
                         break
             else:
                 serial_needed = True
         
         if result is None:
-            if colors[-1] == 'желтый' and red_count == 0:
+            if colors[-1] == 'ж' and red_count == 0:
                 result = 1
             elif blue_count == 1:
                 result = 1
@@ -77,7 +77,7 @@ def wires_module():
     
     # Логика для 5 проводов
     elif count == 5:
-        if colors[-1] == 'черный':
+        if colors[-1] == 'ч':
             serial = input("\nПоследняя цифра серийного номера нечетная? (да/нет): ").strip().lower()
             if serial == 'да':
                 result = 4

@@ -5,27 +5,27 @@ def button_module():
     print("=" * 50)
     
     # Ввод данных
-    print("\nДоступные цвета: синий, белый, желтый, красный")
+    print("\nДоступные цвета: синий(с), белый(б), желтый(ж), красный(кр)")
     while True:
         color = input("Цвет кнопки: ").strip().lower()
-        if color in ['синий', 'белый', 'желтый', 'красный']:
+        if color in ['с', 'б', 'ж', 'кр']:
             break
         print("Неверный цвет!")
     
-    print("\nДоступные надписи: прервать, взорвать, держать")
+    print("\nДоступные надписи: прервать(п), взорвать(в), держать(д)")
     while True:
         label = input("Надпись на кнопке: ").strip().lower()
-        if label in ['прервать', 'взорвать', 'держать']:
+        if label in ['п', 'в', 'д']:
             break
         print("Неверная надпись!")
     
     hold = False  # Нужно ли удерживать
     
     # Правило 1
-    if color == 'синий' and label == 'прервать':
+    if color == 'с' and label == 'п':
         hold = True
     # Правило 2
-    elif label == 'взорвать':
+    elif label == 'в':
         batteries = int(input("\nКоличество элементов питания на бомбе: "))
         if batteries > 1:
             print("\n" + "=" * 50)
@@ -34,12 +34,12 @@ def button_module():
             input("\nНажмите Enter для возврата в меню...")
             return
     # Правило 3
-    elif color == 'белый':
+    elif color == 'б':
         car = input("\nЕсть ли горящий индикатор CAR? (да/нет): ").strip().lower()
         if car == 'да':
             hold = True
     # Правило 4
-    if not hold and label != 'взорвать':
+    if not hold and label != 'в':
         batteries = int(input("\nКоличество элементов питания на бомбе: "))
         frk = input("Есть ли горящий индикатор FRK? (да/нет): ").strip().lower()
         if batteries > 2 and frk == 'да':
@@ -49,10 +49,10 @@ def button_module():
             input("\nНажмите Enter для возврата в меню...")
             return
     # Правило 5
-    if not hold and color == 'желтый':
+    if not hold and color == 'ж':
         hold = True
     # Правило 6
-    elif not hold and color == 'красный' and label == 'держать':
+    elif not hold and color == 'кр' and label == 'д':
         print("\n" + "=" * 50)
         print("НАЖМИТЕ И РЕЗКО ОТПУСТИТЕ КНОПКУ")
         print("=" * 50)
@@ -68,9 +68,9 @@ def button_module():
         print("УДЕРЖИТЕ КНОПКУ")
         print("=" * 50)
         print("\nПРИ УДЕРЖАНИИ КНОПКИ:")
-        print("Синий  - 4")
-        print("Белый  - 1")
-        print("Желтый - 5")
+        print("С  - 4")
+        print("Б  - 1")
+        print("Ж - 5")
         print("Другое - 1")
         print("\n(Отпустите, когда любая цифра таймера равна указанной)")
         print("=" * 50)
