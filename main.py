@@ -10,7 +10,6 @@ from modules.memory import memory_module
 from modules.morse_code import morse_code_module
 from modules.complicated_wires import complicated_wires_module
 from modules.wire_sequence import wire_sequence_module
-#from modules.maze import maze_module
 from modules.passwords import passwords_module
 from modules.knobs import knobs_module
 
@@ -35,7 +34,6 @@ def main_menu():
         print("7.  Азбука Морзе")
         print("8.  Усложненные провода")
         print("9.  Последовательности проводов")
-#        print("10. Лабиринты")
         print("10. Пароли")
         print("11. О поворотных ручках (нестабильный)")
         print("\n0.  Выход")
@@ -64,8 +62,6 @@ def main_menu():
             complicated_wires_module()
         elif choice == "9":
             wire_sequence_module()
-#        elif choice == "10":
-#            maze_module()
         elif choice == "10":
             passwords_module()
         elif choice == "11":
